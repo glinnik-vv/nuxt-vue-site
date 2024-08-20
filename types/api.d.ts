@@ -19,5 +19,15 @@ interface AuthToken {
     count: number;
     next: string | null;
     previous: string | null;
-    results: Post[];
+    results: Any[];
+  }
+
+  interface Category {
+    id: number;
+    code: string;
+    name: string;
+    description: string;
+    created_at: string;
+    updated_at: string;
+    user: number;
   }

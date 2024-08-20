@@ -2,10 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/ui', '@nuxtjs/tailwindcss'],
   runtimeConfig: {
     public: {
-      API_URL: 'http://localhost:8000'
+      API_URL: 'http://10.10.40.36:8000'
     }
   }
 })
