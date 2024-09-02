@@ -153,7 +153,7 @@ const createPost = async () => {
     (data) => {
       successMessage.value = "Пост создан";
       errorMessage.value = "";
-      navigateTo("/posts/" + data.id);
+      navigateTo(`/posts/${data.id}`);
     },
     (error) => {
       console.error("Error creating post:", error);
