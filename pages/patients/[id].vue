@@ -1,7 +1,11 @@
 <template>
   <div>
     <UForm ref="form" :state="patient" @submit="updatePost" :disabled="!enableEdit">
-      <UFormGroup v-for="(value, key) in patient" :key="key" :label="key">
+      <UFormGroup
+        v-for="(value, key) in patient"
+        :key="key.toString()"
+        :label="key.toString()"
+      >
         <UInput :disabled="!enableEdit" :value="value" v-model="patient[key]" />
       </UFormGroup>
 
@@ -35,7 +39,17 @@
 const form = ref();
 
 const route = useRoute();
-const patient = ref({ first_name: "", last_name: "", age: "" });
+const patient = ref({
+  first_name: "",
+  last_name: "",
+  surname: "",
+  birth_date: "",
+  id_pac: "",
+  sex: "",
+  snils: "",
+  created_at: "",
+  updated_at: "",
+});
 const id = route.params.id;
 const showModal = ref(false);
 const enableEdit = ref(false);
@@ -73,7 +87,13 @@ const fetchPost = async () => {
       if (postsValue) {
         patient.value.first_name = postsValue.first_name;
         patient.value.last_name = postsValue.last_name;
-        patient.value.age = postsValue.age;
+        patient.value.surname = postsValue.surname;
+        patient.value.birth_date = postsValue.birth_date;
+        patient.value.id_pac = postsValue.id_pac;
+        patient.value.sex = postsValue.sex;
+        patient.value.snils = postsValue.snils;
+        patient.value.created_at = postsValue.created_at;
+        patient.value.updated_at = postsValue.updated_at;
       }
     },
     (error) => {

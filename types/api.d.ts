@@ -6,10 +6,16 @@ interface AuthToken {
   type JwtToken = string;
 
 interface Patient {
-    id: number;
+    id: string;
     first_name: string;
     last_name: string;
-    age: string;
+    surname: string;
+    id_pac: string;
+    birth_date: string;
+    sex: string;
+    snils: string;
+    created_at: string;
+    updated_at: string;
   }
   
   interface Post {
